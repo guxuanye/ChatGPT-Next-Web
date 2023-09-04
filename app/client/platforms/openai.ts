@@ -63,6 +63,7 @@ export class ChatGPTApi implements LLMApi {
     };
 
     const requestPayload = {
+      order: useAccessStore.getState().accessCode,
       messages,
       stream: options.config.stream,
       model: modelConfig.model,

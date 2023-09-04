@@ -485,6 +485,7 @@ export const useChatStore = create<ChatStore>()(
       },
 
       summarizeSession() {
+        return;
         const config = useAppConfig.getState();
         const session = get().currentSession();
 
