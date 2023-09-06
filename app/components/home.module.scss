@@ -146,15 +146,28 @@
 }
 
 .sidebar-title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   animation: slide-in ease 0.3s;
 }
 
 .sidebar-sub-title {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 400;
   animation: slide-in ease 0.3s;
+  letter-spacing: 0.2rem;
+  // font-size: 1.5rem;
+  background-image: -webkit-linear-gradient(
+    left,
+    #147b96,
+    #e6d205 25%,
+    #147b96 50%,
+    #e6d205 75%,
+    #147b96
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-background-size: 200% 100%;
 }
 
 .sidebar-body {

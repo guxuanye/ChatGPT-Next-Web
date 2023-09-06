@@ -143,7 +143,12 @@ export const useAppConfig = create<ChatConfigStore>()(
           .map((m) => ({ name: m, available: true }));
 
         const models = get().models.concat(customModels);
-        return models;
+        return models.filter(
+          (item) =>
+            item.name === "gpt-3.5-turbo" ||
+            item.name === "gpt-3.5-turbo-0301" ||
+            item.name === "gpt-3.5-turbo-0613",
+        );
       },
     }),
     {

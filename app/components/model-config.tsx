@@ -146,7 +146,7 @@ export function ModelConfigList(props: {
         ></input>
       </ListItem>
 
-      <ListItem
+      {/* <ListItem
         title={Locale.Settings.InputTemplate.Title}
         subTitle={Locale.Settings.InputTemplate.SubTitle}
       >
@@ -159,7 +159,7 @@ export function ModelConfigList(props: {
             )
           }
         ></input>
-      </ListItem>
+      </ListItem> */}
 
       <ListItem
         title={Locale.Settings.HistoryCount.Title}
@@ -169,7 +169,7 @@ export function ModelConfigList(props: {
           title={props.modelConfig.historyMessageCount.toString()}
           value={props.modelConfig.historyMessageCount}
           min="0"
-          max="64"
+          max="4"
           step="1"
           onChange={(e) =>
             props.updateConfig(

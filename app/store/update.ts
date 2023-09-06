@@ -3,6 +3,7 @@ import { persist } from "zustand/middleware";
 import { FETCH_COMMIT_URL, FETCH_TAG_URL, StoreKey } from "../constant";
 import { api } from "../client/api";
 import { getClientConfig } from "../config/client";
+import { useAccessStore } from "@/app/store";
 
 export interface UpdateStore {
   versionType: "date" | "tag";
@@ -108,12 +109,25 @@ export const useUpdateStore = create<UpdateStore>()(
         }));
 
         try {
-          const usage = await api.llm.usage();
+          // const usage = await api.llm.usage();
+          const QueryQuota = await fetch(
+            "https://xh8u8wf27w.us.aircode.run/QueryUsage",
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+              method: "POST",
+              body: JSON.stringify({
+                order: useAccessStore.getState().accessCode,
+              }),
+            },
+          );
+          const restUsage = await QueryQuota.json();
 
-          if (usage) {
+          if (restUsage) {
             set(() => ({
-              used: usage.used,
-              subscription: usage.total,
+              used: restUsage.usage,
+              subscription: restUsage.usage,
             }));
           }
         } catch (e) {
