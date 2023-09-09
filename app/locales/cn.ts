@@ -118,7 +118,7 @@ const cn = {
     ResetConfirm: "确认清空历史摘要？",
   },
   Home: {
-    NewChat: "新的对话",
+    NewChat: "新的代码",
     DeleteChat: "确认删除选中的对话？",
     DeleteToast: "已删除会话",
     Revert: "撤销",
@@ -339,7 +339,7 @@ const cn = {
     Skip: "直接开始",
     NotShow: "不再展示",
     ConfirmNoShow: "确认禁用？禁用后可以随时在设置中重新启用。",
-    Title: "挑选一个角色",
+    Title: "代 码 生 成 平 台",
     SubTitle: "从此刻起，加速你的编程效率",
     More: "查看全部",
   },
